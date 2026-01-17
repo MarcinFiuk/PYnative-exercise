@@ -229,14 +229,93 @@ print_downwards_half_pyramid(5)
 #Exercise 15: Get an int value of base raises to the power of exponent
 #Write a function called exponent(base, exp) that returns an int value of base raises to the power of exp.
 #Note here exp is a non-negative integer, and the base is an integer.
-
+'''
 def pow(base,exponent):
+
   if base <0 or exponent<0:
     return "value must to be bigger than 0"
+
   res = 1
   for _ in range(1,exponent+1):
     res *=base
-
   print(res)
 
 pow(5,4)
+'''
+
+#Exercise 16: Check Palindrome Number
+#Write a code to check if given number is palindrome.
+'''
+Ex 9 is the same
+'''
+
+#Exercise 17: Generate Fibonacci series up to 15 terms
+'''
+def generate_Fibonacci_series(n):
+  fibonacci_list=[0,1]
+  
+  for i in range(1,n-1):
+    print(i)
+    fibonacci_list.append(fibonacci_list[i-1]+fibonacci_list[i])
+
+  return fibonacci_list
+
+print(generate_Fibonacci_series(15))
+'''
+
+#Exercise 18: Check if a given year is a leap year
+#Rules for leap years: a year is a leap year if it’s divisible by 4, unless it’s also divisible by 100 but not by 400.
+'''
+year1 = 2020 # Output True
+year2 = 2025 # Output False
+
+def check_if_leap_year(year):
+  if year%4==0 and (year%100 !=0 or year%400 ==0):
+    return True
+  return False
+
+print(check_if_leap_year(400))
+'''
+
+#Exercise: 19: Print Alternate Prime Numbers till 20
+'''
+def check_if_is_prime(num):
+  if num<=1:
+    return False
+  
+  for i in range(2, int(num ** 0.5) + 1):
+      if num % i == 0:
+        return False
+    
+  return True
+
+def get_all_prime_till(n):
+  prime_list=[]
+  for el in range(2,n+1):
+    if check_if_is_prime(el):
+        prime_list.append(el)
+  return prime_list
+
+def get_alternate(list):
+  alternate =list[::2]
+  return alternate
+
+print(get_all_prime_till(20))
+print(get_alternate(get_all_prime_till(20)))
+'''
+
+#Exercise 20: Print Reverse Number Pattern
+#1 1 1 1 1 
+#2 2 2 2 
+#3 3 3 
+#4 4 
+#5 
+
+def print_reverse_number_pattern(n):
+  max_range = n+1
+  for i in range(1,max_range):
+    for j in range(0,max_range-i):
+      print(i,end=" ")
+    print()
+
+print_reverse_number_pattern(5)
