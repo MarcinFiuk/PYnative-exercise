@@ -66,7 +66,63 @@ def display_special_numbers(list):
 display_special_numbers(numbers)
 '''
 
+#Exercise 6: Count the total number of digits in a number
+#Write a Python program to count the total number of digits in a number using a while loop.
+'''
+number = 758697
+def count_digits_in_a_number(num):
+  nr_of_digits = 0
+  while num>0:
+    nr_of_digits+=1
+    num //=10
+  return nr_of_digits
 
+print(count_digits_in_a_number(number))
+'''
 
+#Exercise 7: Print the following pattern
+#5 4 3 2 1 
+#4 3 2 1 
+#3 2 1 
+#2 1 
+#1
+'''
+def print_pattern(n):
+  for i in range(n,0,-1):
+    for j in range(i,0,-1):
+      print(j,end=" ")
+    print()
 
+print_pattern(8)
+'''
+
+#Exercise 8: Print list in reverse order using a loop
+'''
+list1 = [10, 20, 30, 40, 50]
+def print_lint_reverse(list):
+  #for el in list[::-1]:
+  for el in reversed(list):
+    print(el)
+
+print_lint_reverse(list1)
+'''
+
+#Exercise 9: Display numbers from -10 to -1 using for loop
+'''
+def display_negative_num(start, end):
+  for n in range(start,end+1,1):
+    print(n)
+
+display_negative_num(-10,-1)
+'''
+
+#Exercise 10: Display a message “Done” after the successful execution of the for loop
+
+def print_message_after_loop(msg):
+  for i in range(5):
+    print(i)
+  else:
+    print(msg)
+
+print_message_after_loop("Done")
 
