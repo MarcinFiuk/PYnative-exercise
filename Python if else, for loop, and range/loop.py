@@ -271,7 +271,7 @@ print_multiplication_table(10)
 #4 5 6  
 #7 8 9 10  
 #11 12 13 14 15
-
+'''
 def print_pattern(lvl):
   starting_nr=0
   for i in range(1,lvl+1):
@@ -281,3 +281,40 @@ def print_pattern(lvl):
     print()
 
 print_pattern(5)
+'''
+
+#Exercise 21: Flatten a nested list using loops
+#Write a program to flatten a nested list using loops.
+'''
+nested_list = [1, [2, 3], [4, 5, 6], 7, [8, 9,[10,11,[12,22]]]]
+
+def flatten_list(old_list, newList):
+  flat_list=newList
+  for l in old_list:
+    if isinstance(l,list):
+      flatten_list(l,flat_list)
+    else:
+      flat_list.append(l)
+  return flat_list
+
+print(flatten_list(nested_list,[]))
+'''
+
+#Exercise 22: Find largest and smallest digit in a number
+#Write a program in Python identifies the digit with the highest value and the digit with the lowest value within that number.
+
+num1 = 9876543210
+num2 = -5082
+
+def find_largest_and_smallest_digit(num):
+  num_in_str=str(abs(num))
+  max_d=num_in_str[0]
+  min_d=num_in_str[0]
+  for l in num_in_str[1:]:
+    if l.isdigit():
+      max_d = max(int(max_d),int(l))
+      min_d = min(int(min_d), int(l))
+  print(f"Largest digit in {num}: {max_d}")
+  print(f"Smallest digit in {num}: {min_d}")
+
+find_largest_and_smallest_digit(num2)
